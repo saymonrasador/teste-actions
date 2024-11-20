@@ -1,0 +1,17 @@
+name: teste
+
+on:
+  push:
+      branches:
+          -main
+jobs:
+  build:
+      runs-on: ubuntu-latest 
+      steps:
+          - uses: actions/checkout@v2    "verificar se codigo do repositorio"
+          - uses: actions/setup-python@v2   "atualizar o gerenciador de pacotes python" 
+            with:
+                  python-version: 3.8
+          - run: |
+              python print2.py
+      
